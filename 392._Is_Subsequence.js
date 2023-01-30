@@ -30,6 +30,6 @@ var isSubsequence = function (s, t) {
     } else {
       p2++;
     }
-    return p1 == s.length;
   }
+  return p1 == s.length;
 };
