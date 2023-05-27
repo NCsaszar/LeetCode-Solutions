@@ -25,6 +25,7 @@ Output: [0]
  * }
  */
 /**
+ *
  * @param {ListNode} list1
  * @param {ListNode} list2
  * @return {ListNode}
