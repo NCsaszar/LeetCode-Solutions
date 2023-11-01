@@ -3,15 +3,24 @@
  * @param {number} k
  * @return {number}
  */
-var findMaxAverage = function (nums, k) {
-  let maxAverage = -Infinity;
-  for (let i = 0; i + k <= nums.length; i++) {
+function findMaxAverage(nums, k) {
     let sum = 0;
-    for (let j = i; j < k + i; j++) {
-      sum += nums[j];
+
+    // Calculate the sum of the first k elements
+    for (let i = 0; i < k; i++) {
+        sum += nums[i];
     }
-    maxAverage = Math.max(maxAverage, sum / k);
-  }
-  return maxAverage;
-};
+
+    let maxSum = sum;
+
+    // Slide the window
+    for (let i = k; i < nums.length; i++) {
+        sum = sum - nums[i - k] + nums[i];
+        maxSum = Math.max(maxSum, sum);
+    }
+
+    // Return the maximum average
+    return maxSum / k;
+}
+
 
