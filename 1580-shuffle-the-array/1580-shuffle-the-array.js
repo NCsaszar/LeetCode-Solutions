@@ -3,11 +3,6 @@
  * @param {number} n
  * @return {number[]}
  */
-var shuffle = function (nums, n) {
-  let output = [];
-  for (let i = 0; i < nums.length / 2; i++) {
-    output.push(nums[i]);
-    output.push(nums[i + n]);
-  }
-  return output;
+var shuffle = function(nums, n) {
+    return [].concat(...nums.slice(0, n).map((val, idx) => [val, nums[idx + n]]));
 };
